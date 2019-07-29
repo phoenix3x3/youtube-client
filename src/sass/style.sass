@@ -1,0 +1,138 @@
+$ff: Calibri, sans-serif
+$bg: #343D46
+$yCol_1: #ffffff
+$yCol_2: #FF0000
+$bgTitke: #e0e0e0
+
+*
+    margin: 0
+    padding: 0
+
+body
+    background-color: $bg
+    font-family: $ff
+    overflow: hidden
+section.search
+    height: 100px
+    div
+        width: 75%
+        max-width: 400px
+        height: 30px
+        margin: auto
+        margin-top: 10px
+        margin-bottom: 10px
+        background-color: $yCol_1
+        border-radius: 3px
+        padding: 5px
+        display: flex
+        align-items: center
+        input
+            min-width: 100px
+            width: 80%
+            padding-left: 10px
+            background-color: transparent
+            border: 0
+        button
+            background-color: transparent
+            border: none
+            color: #5B5F64
+            padding: 0 10px
+            font-weight: bold
+            border-left: 1px solid #d9d9d9
+            cursor: pointer
+            user-select: none
+
+section.videoSlider
+    display: flex
+    align-items: center
+    overflow-y: hidden
+    width: calc(var(--n)*100%)
+    transform: translate(calc(var(--i, 0)/var(--n)*-100%))
+    transition: transform .5s ease-out
+    .cardPage
+        width: 100%
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        user-select: none
+        pointer-events: none
+        width: calc(100%/var(--n))
+        .videoCard
+            width: 300px
+            height: 500px
+            background-color: $yCol_1
+            border: 3px $yCol_2 solid
+            border-radius: 5%
+            display: flex
+            flex-direction: column
+            align-items: center
+            padding: 10px
+            margin: 20px
+            overflow: hidden
+            margin-right: 2%
+            -webkit-box-sizing: border-box
+            -moz-box-sizing: border-box
+            box-sizing: border-box
+            -moz-user-select: none
+            -webkit-user-select: none
+            -ms-user-select: none
+            user-select: none
+            pointer-events: none
+            div
+                width: 100%
+            .preview
+                display: inline-block
+            .title
+                background-color: #e0e0e0
+                font-size: 25px
+            .auther
+                font-style: italic
+                color: $yCol_2
+                border: 2px $yCol_2 solid
+                border-left: none
+                border-right: none
+            .release,
+            .rate,
+            .title
+                text-align: center
+            .release
+                color: gray
+                font-style: italic
+            .rate
+                color: gold
+
+[id^="card"]
+    display: none
+
+section.navBtns
+    width: 100%
+    height: 100px
+.menu
+    position: absolute
+    width: 100%
+    margin: 10px auto
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    align-content: center 
+    justify-content: center 
+    label 
+        cursor: pointer
+        display: inline-block
+        width: 20px
+        height: 20px
+        color: $yCol_1
+        text-align: center
+        background: transparent
+        border-radius: 50%
+        border: 1px solid #ffffff
+        margin: 0 .2em 1em
+    label.current
+        color: $yCol_1
+        background-color: $yCol_2
+    label:active
+        background: #fff
+        color: $yCol_2
+    label:hover
+        background: #fff
+        color: $yCol_2
